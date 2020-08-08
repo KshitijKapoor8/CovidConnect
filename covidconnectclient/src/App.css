@@ -11,16 +11,17 @@
 }
 
 .titleName{
+  flex-grow: 1;
   font-weight:bold;
   font-size: 48px;
-  text-align: center;
-}
-.button-container{
-  margin-left: auto
 }
 
 .nav-container{
+<<<<<<< HEAD
   margin-left: auto
+=======
+  display: flex;
+>>>>>>> e825614fe1236f2ad4dba6e04779eb434849ff83
 }
 
 
