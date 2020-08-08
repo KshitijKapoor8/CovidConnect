@@ -12,9 +12,10 @@ class Navbar extends Component {
         return (
             <AppBar>
                 <Toolbar className='nav-container'>
-                    <Button style ={{fontSize: '42px'}} color = "inherit" component={Link} to="/">Home</Button>
-                    <Button style ={{fontSize: '42px'}} color = "inherit" component={Link} to="/Connect">Connect</Button>
-                    <Button style ={{fontSize: '42px'}} color = "inherit" component={Link} to="/Learn">Learn</Button>
+                    <Button style ={{fontSize: '20px'}} color = "inherit" component={Link} to="/">Home</Button>
+                    <Button style ={{fontSize: '20px'}} color = "inherit" component={Link} to="/Connect">Connect</Button>
+                    <Button style ={{fontSize: '20px'}} color = "inherit" component={Link} to="/Learn">Learn</Button>
+                    <Button style ={{fontSize: '20px'}} color = "inherit" component={Link} to="/">Login</Button>
                 </Toolbar>
             </AppBar>
         )

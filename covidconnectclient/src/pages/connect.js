@@ -4,7 +4,7 @@ class connect extends Component {
     render() {
         return (
             <div>
-                 <h1>CONNECT SCREEN</h1>
+                 <h1>Connect</h1>
             </div>
         )
     }
