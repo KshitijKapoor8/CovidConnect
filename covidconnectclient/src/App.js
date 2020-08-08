@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import createTheme from '@material-ui/core/styles/createMuiTheme';
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
 //Components
 import Navbar from './components/Navbar';
@@ -18,13 +18,20 @@ const theme = createMuiTheme({
       main: '#263238',
       dark: '#000a12',
       contrast_text: '#ffffff'
+    },
+    secondary: {
+      light: '#a4a4a4', 
+      main: '#757575',
+      dark: '#494949',
+      contrast_text: '#ffffff'
     }
   },
 })
  
 function App() {
   return (
-    <div className="App">
+    <MuiThemeProvider theme={theme}>
+      <div className="App">
       <Router>
         <Navbar />
         .container{
@@ -36,6 +43,7 @@ function App() {
         }
       </Router>
     </div>
+    </MuiThemeProvider>
   );
 }
 
