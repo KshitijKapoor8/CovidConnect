@@ -11,8 +11,8 @@ class Navbar extends Component {
     render() {
         return (
             <AppBar>
-                <text className='titleName' >CovidConnect</text>
                 <Toolbar className='nav-container'>
+                    <text className='titleName' >CovidConnect</text>
                     <Button style={{ fontSize: '20px' }} size = "medium" variant = "outlined"color = "inherit" component={Link} to="/">Home</Button>
                     <Button style={{ fontSize: '20px' }} size = "medium" variant = "outlined"color = "inherit" component={Link} to="/Connect">Connect</Button>
                     <Button style={{ fontSize: '20px' }} size = "medium" variant = "outlined" color = "inherit" component={Link} to="/Learn">Learn</Button>
