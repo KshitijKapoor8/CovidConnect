@@ -9,11 +9,17 @@ app.get('/posts', (req, res) => {
     admin
         .firestore()
         .collection("posts")
+        .orderBy('date', 'desc')
         .get()
             .then((data) => {
                 let posts = [];
                 data.forEach((doc) => {
-                    posts.push(doc.data());
+                    posts.push({
+                        postId: doc.id,
+                        body: doc.data().body,
+                        userHandle: doc.data().userHandle,
+                        date: doc.data().date
+                    });
                 });
                 return res.json(posts)
             })
@@ -23,7 +29,7 @@ app.get('/posts', (req, res) => {
 app.post('/make', (req, res) => {
     const newPost = {
         body: req.body.body,
-        date: admin.firestore.Timestamp.fromDate(new Date()),
+        date: new Date().toISOString(),
         userHandle: req.body.userHandle
     };
 
@@ -40,4 +46,4 @@ app.post('/make', (req, res) => {
 });
 
 
-exports.api = functions.https.onRequest(app);
+exports.api = functions.region('nam5 (us-central)').https.onRequest(app);
