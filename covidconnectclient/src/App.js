@@ -24,8 +24,12 @@ const theme = createMuiTheme({
       main: '#757575',
       dark: '#494949',
       contrast_text: '#ffffff'
+    },
+    Button: {
+      textTransform: 'none',
     }
   },
+
 })
  
 function App() {

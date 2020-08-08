@@ -2,6 +2,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Microsoft PhagsPa', 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
+  
 }
 
 .container{
@@ -9,10 +10,24 @@
   max-width: 1200px;
 }
 
+.titleName{
+  font-weight:bold;
+  font-size: 48px;
+  text-align: center;
+}
+.button-container{
+  margin-left: auto
+}
+
 .nav-container{
+<<<<<<< HEAD
   margin: left;
   
+=======
+  margin-left: auto
+>>>>>>> d5638d19419278dd9b311a164f26715a17105523
 }
+
 
 Button{
   text-transform: none;
