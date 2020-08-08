@@ -12,7 +12,14 @@ import connect from './pages/connect';
 import learn from './pages/learn';
 
 const theme = createMuiTheme({
-  
+  palette: { 
+    primary: {
+      light: '#4f5b62',
+      main: '#263238',
+      dark: '#000a12',
+      contrast_text: '#ffffff'
+    }
+  },
 })
  
 function App() {
