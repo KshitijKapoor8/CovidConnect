@@ -16,7 +16,7 @@ class Navbar extends Component {
                     <Button style ={{fontSize: '20px'}} color = "inherit" component={Link} to="/">Home</Button>
                     <Button style ={{fontSize: '20px'}} color = "inherit" component={Link} to="/Connect">Connect</Button>
                     <Button style ={{fontSize: '20px'}} color = "inherit" component={Link} to="/Learn">Learn</Button>
-                    <Button style ={{fontSize: '20px'}} color = "inherit" component={Link} to="/">Login</Button>
+                    <Button style ={{fontSize: '20px'}} color = "inherit" component={Link} to="/Login">Login</Button>
                 </Toolbar>
             </AppBar>
         )
