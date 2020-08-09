@@ -6,6 +6,8 @@ import axios from "axios";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import {signinUser} from '../redux/actions/signinAction.js';
+
 
 
 const styles = {
@@ -27,6 +29,9 @@ const styles = {
   TextFieldCEmail: {
     margin: "30px auto 30px auto",
   },
+  numberC: {
+    margin: "30px auto 30px auto",
+  }
 };
 
 class signup extends Component {
@@ -37,37 +42,21 @@ class signup extends Component {
       password: "",
       confirmPassword: "",
       confirmEmail: "",
+      Newnumber: "",
       loading: false,
       errors: {},
     };
   }
   submit = (event) => {
     event.preventDefault();
-    this.setState({
-      loading: true,
-    });
     const newUserData = {
       email: this.state.email,
       password: this.state.password,
       confirmPassword: this.state.confirmPassword,
-      confirmEmail: this.state.confirmEmail
+      confirmEmail: this.state.confirmEmail,
+      Newnumber: this.state.Newnumber
     };
-    axios
-      .post("/signup",newUserData)
-      .then((res) => {
-        console.log(res.data);
-        localStorage.setItem('FBIdToken','Bearer ${res.data.token}')
-        this.setState({
-          loading: false,
-        });
-        this.props.history.push("/");
-      })
-      .catch((err) => {
-        this.setState({
-          error: err.response.data,
-          loading: false,
-        });
-      });
+    signup(newUserData, this.props.history);
   };
   change = (event) => {
     this.setState({
@@ -139,6 +128,21 @@ class signup extends Component {
               onChange={this.change}
               fullWidth
             />
+            <TextField
+              id="filled-secondary"
+              name="number"
+              type="username"
+              label="Number"
+              variant="filled"
+              color="secondary"
+              className={classes.numberC}
+              helperText={errors.numberC}
+              error={errors.numberC ? true : false}
+              value={this.state.numberC}
+              onChange={this.change}
+              fullWidth
+            />
+
             
             <Button
               id="Login"
