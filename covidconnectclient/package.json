@@ -8,6 +8,10 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
+<<<<<<< HEAD
+    "jwt-decode": "^2.2.0",
+=======
+>>>>>>> c2a3b6529bc314d7ce3d06adaa9d28de2acb83df
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
