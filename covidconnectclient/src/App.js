@@ -16,6 +16,8 @@ import learn from "./pages/learn";
 import login from "./pages/login";
 import signup from "./pages/signup.js";
 
+let autheniticated;
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -36,7 +38,7 @@ const theme = createMuiTheme({
   },
 });
 
-let autheniticated;
+
 const token = localStorage.FBIdToken;
 if(token){
   const decodedToken = jwtDecode(token)
