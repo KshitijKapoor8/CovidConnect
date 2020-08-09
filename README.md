@@ -11,3 +11,7 @@ npm install --save react-router-dom
 npm install --save busboy
 
 npm install --save uuidv4
+
+npm install axios --save
+
+npm install --save jwt-decode

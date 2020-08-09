@@ -82,7 +82,7 @@ app.post('/make', (req, res) => {
         .collection("posts")
         .add(newPost)
         .then((doc) => {
-            res.json({ message : `document ${doc.id} created succesfully`});
+           return res.json({ message : `document ${doc.id} created succesfully`});
         })
         .catch((err) => {
             res.status(500).json({ error : 'Something went wrong'});
@@ -96,9 +96,10 @@ const isEmpty = (string) => {
 }
 
 const isEmail = (email) => {
-    const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (email.match(regEx)) return true;
-    else return false;
+    // const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    // if (email.match(regEx)) return true;
+    // else return false;
+    return true;
 }
 
 app.post('/signup', (req, res) => {
