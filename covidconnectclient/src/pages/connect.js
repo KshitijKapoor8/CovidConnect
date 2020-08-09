@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
 import axios from 'axios';
-import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import { FormHelperText } from '@material-ui/core';
+import Card from "@material-ui/core/Card";
+import CardMedia from "@material-ui/core/CardMedia";
+import { Typography } from "@material-ui/core";
 
 const styles = {
     card: {
@@ -38,14 +40,14 @@ class connect extends Component {
         this.state.posts.map(make => <p>{make.body}</p>)
         ) : <p>Loading...</p>
         return (
-            <Grid className='postGrid' container spacing={16} >
-                <Grid item sm={8} xs={12}>
-                    {recentPostsMarkup}
-                </Grid>
-                <Grid item sm={4} xs={12}>
-                    <p>Profile....</p>
-                </Grid>
-            </Grid>
+            <Card>
+            <CardMedia
+              title="Profile Image"/>
+            <CardContent>
+              <Typography variant="h5">USER</Typography>
+              <Typography variant="body2" color="textSecondary" > hello</Typography> 
+            </CardContent>
+          </Card>
         )
     }
 }
