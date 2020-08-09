@@ -49,10 +49,11 @@ if(token){
   {
     authenticated = true;
   }
-
 }
 
 
+
+ 
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
