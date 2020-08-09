@@ -98,6 +98,8 @@ class login extends Component {
               variant="contained"
               color="primary"
               className={classes.button}
+              component={Link}
+              to="/"
             >Login</Button>
           </form>
         </Grid>

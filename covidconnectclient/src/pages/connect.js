@@ -27,10 +27,10 @@ const styles = {
     margin: "-50px auto auto 1100px",
   }
 };
-  axios.get('http://localhost:5000/covidconnect-8067e/nam5(us-central)/api')
+  axios.get('http://localhost:5000/covidconnect-8067e/nam5(us-central)/api/posts')
     .then((res) =>
     {
-      
+      console.log('/posts')
     })
     .catch(err =>{
       console.log(err);
@@ -38,6 +38,12 @@ const styles = {
 
 
 class connect extends Component {
+  enableEdit() {
+    this.setState({
+    disabled: true,
+    label:"+1 555 555 5555" 
+    })
+  }
   render() {
     const { classes } = this.props;
     return (
@@ -55,8 +61,8 @@ class connect extends Component {
               variant="contained"
               color="primary"
               className={classes.button}
-             // onClick={()=> setButtonText("555-555-5555")}
-             >
+              onClick={() => this.enableEdit()}
+              >
               Connect
             </Button>
         </CardContent>
