@@ -5,7 +5,7 @@ import userReducer from "./reducers/userReducer";
 import dataReducer from "./reducers/dataReducers";
 import uiReducer from "./reducers/userReducer";
 
-const initial = {};
+const initialState  = {};
 
 const middleware = [thunk];
 

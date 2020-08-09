@@ -15,3 +15,5 @@ npm install --save uuidv4
 npm install axios --save
 
 npm install --save jwt-decode
+
+npm install redux-actions
