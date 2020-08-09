@@ -16,6 +16,8 @@ import learn from "./pages/learn";
 import login from "./pages/login";
 import signup from "./pages/signup.js";
 
+let autheniticated;
+
 const theme = createMuiTheme({
   palette: {
     primary: {
