@@ -10,7 +10,7 @@ import axios from "axios";
 export const loginUser = (userData, history) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
-    .post("/Login", userData)
+    .post("/login", userData)
     .then((res) => {
       const FBIdToken = `Bearer ${res.data.token}`;
       localStorage.setItem("FBIdToken", FBIdToken);
