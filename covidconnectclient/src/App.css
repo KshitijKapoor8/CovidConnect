@@ -5,7 +5,8 @@
 }
 
 body {
-  background-color: #274450;
+  background: rgb(39,68,80);
+  background: radial-gradient(circle, rgba(39,68,80,1) 0%, rgba(39,68,80,1) 35%, rgba(38,50,55,1) 100%);
 }
 
 .container {
@@ -22,13 +23,43 @@ body {
 .postGrid {
   padding-top: 4rem;
 }
+
 h1.homeHeaders {
   text-shadow: 8px 8px black;
   padding-top: 6rem;
   color: white;
   text-align: center;
   font-size: 80px;
-}
+  animation: fadeIn ease 20s;
+  -webkit-animation: fadeIn ease 20s;
+  -moz-animation: fadeIn ease 20s;
+  -o-animation: fadeIn ease 20s;
+  -ms-animation: fadeIn ease 20s;
+  }
+  @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
 h2.homeHeaders {
   text-shadow: 5px 5px black;
   padding-top: 1rem;
@@ -43,6 +74,13 @@ h3.homeHeaders {
   color: white;
   text-align: center;
   font-size: 36px;
+  opacity: 15%;
+  transition:opacity 0.8s
+}
+
+h3.homeHeaders:hover{
+  opacity:100%;
+  transition:opacity 0.5s
 }
 .button {
   background-color: transparent;
@@ -71,13 +109,22 @@ h4.homeHeaders {
   padding-top: 50rem;
 }
 
+.learnTop{
+  color: white;
+}
 .stats
 {
-  padding-top: 5rem;
+  color: white;
+  padding-top: 2px;
   font-size: 5rem;
   text-align: center;
 }
 
+.numStats{
+  color: red;
+  font-size: 150px;
+  text-align: center;
+}
 .learnTop
 {
   text-align: center;

@@ -97,12 +97,6 @@ class login extends Component {
               type="submit"
               variant="contained"
               color="primary"
-<<<<<<< HEAD
-              className={classes.button}
-              component={Link}
-              to="/"
-=======
->>>>>>> b853bd7834f0056d086bb87aac1a3a17f900d24f
             >Login</Button>
           </form>
         </Grid>

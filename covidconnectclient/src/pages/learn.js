@@ -21,8 +21,10 @@ export class learn extends Component {
       console.log(number),
       <div>
         <h1 class = "learnTop">These many people have suffered-</h1>
-        <h1 class = "stats">{number} people infected.</h1>
-        <h1 class = "stats">{number2} deaths.</h1>
+        <h1 class = "numStats">{number}</h1>
+        <h1 class = "stats">people infected.</h1>
+        <h1 class = "numStats">{number2}</h1>
+        <h1 class = "stats">deaths.</h1>
       </div>
     )
   }
