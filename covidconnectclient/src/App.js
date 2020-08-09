@@ -35,18 +35,20 @@ const theme = createMuiTheme({
     },
   },
 });
+
+let autheniticated;
 const token = localStorage.FBIdToken;
 if(token){
   const decodedToken = jwtDecode(token)
-  if(decodedToken.exp * 1000 < DataCue.now()){
+  if(decodedToken.exp * 1000 < Date.now()){
     window.location.href = '/login'
-    autheniticated = false;
+    autheniticated = false
 
 
   }
   else
   {
-    autheniticated = true;
+      autheniticated = true;
   }
 }
 
