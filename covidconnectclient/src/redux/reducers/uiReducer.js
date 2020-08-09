@@ -1,8 +1,6 @@
 import {
   SET_ERRORS,
-  CLER_LOADING,
   LOADING_UI,
-  SET_USER,
   CLEAR_ERRORS,
 } from "../types";
 
@@ -13,7 +11,7 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case SET_USER:
+    case SET_ERRORS:
       return {
         ...state,
         loading: false,
@@ -30,5 +28,7 @@ export default function (state = initialState, action) {
         ...state,
         loading: true,
       };
+    default:
+      return state;
   }
 }
