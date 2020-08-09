@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import withStyles from "@material-ui/styles/withStyles";
 import PropTypes from "prop-types";
-import axios from "axios";
-import Link from '@material-ui/core/Link';
+
 
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 //import { Link } from "react-router-dom";
 
-//import {connect} from 'react-redux';
-//import {loginUser} from '../redux/actions/userActions';
+import {connect} from 'react-redux';
+import {loginUser} from '../redux/actions/userActions.js';
 
 
 
@@ -48,6 +47,7 @@ class login extends Component {
       email: this.state.email,
       password: this.state.password,
     };
+    loginUser(userData, this.props.history);
   };
   change = (event) => {
     this.setState({
@@ -114,9 +114,7 @@ login.propTypes = {
   UI: PropTypes.object.isRequired,
 };
 
-const mapStatesToProps = (state) => ({
-  user: state.user,
-  UI: state.UI,
-});
-
+// const mapActionsToProps = {
+//   loginUser
+// }
 export default withStyles(styles)(login);
