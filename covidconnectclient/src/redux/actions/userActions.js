@@ -10,14 +10,14 @@ import axios from "axios";
 export const loginUser = (userData, history) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
-    .post("http://localhost:5001/covidconnect-8067e/nam5 (us-central)/api/login", userData)
+    .post("http://localhost:5001/covidconnect-8067e/nam5(us-central)/api/Login", userData)
     .then((res) => {
       const FBIdToken = `Bearer ${res.data.token}`;
       localStorage.setItem("FBIdToken", FBIdToken);
       axios.defaults.headers.common["Authorization"] = FBIdToken;
       dispatch(getUserData());
       dispatch({ type: CLEAR_ERRORS });
-      history.push('/Connect');
+      history.push('/');
     })
     .catch((err) => {
       dispatch({
@@ -28,8 +28,8 @@ export const loginUser = (userData, history) => (dispatch) => {
 };
 export const getUserData = () => (dispatch) => {
   axios
-    .get("/user")
-    .then((res) => {
+    .get("/users")
+      .then((res) => {
       dispatch({
         type: SET_USER,
         payload: res.data,
