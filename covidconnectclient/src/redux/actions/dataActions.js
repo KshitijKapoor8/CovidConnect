@@ -18,7 +18,7 @@ import axios from "axios";
 export const getScreams = () => (dispatch) => {
   dispatch({ type: LOADING_DATA });
   axios
-    .get("/user")
+    .get("/users")
     .then((res) => {
       dispatch({
         type: SET_SCREAMS,
@@ -35,7 +35,7 @@ export const getScreams = () => (dispatch) => {
 export const getScream = (screamId) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
-    .get(`/user/${screamId}`)
+    .get(`/users/${screamId}`)
     .then((res) => {
       dispatch({
         type: SET_SCREAM,
@@ -49,7 +49,7 @@ export const getScream = (screamId) => (dispatch) => {
 export const postScream = (newScream) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
-    .post("/user", newScream)
+    .post("/users", newScream)
     .then((res) => {
       dispatch({
         type: POST_SCREAM,
@@ -67,7 +67,7 @@ export const postScream = (newScream) => (dispatch) => {
 // Like a scream
 export const likeScream = (screamId) => (dispatch) => {
   axios
-    .get(`/user/${screamId}/like`)
+    .get(`/users/${screamId}/like`)
     .then((res) => {
       dispatch({
         type: LIKE_SCREAM,
@@ -79,7 +79,7 @@ export const likeScream = (screamId) => (dispatch) => {
 // Unlike a scream
 export const unlikeScream = (screamId) => (dispatch) => {
   axios
-    .get(`/user/${screamId}/unlike`)
+    .get(`/users/${screamId}/unlike`)
     .then((res) => {
       dispatch({
         type: UNLIKE_SCREAM,
@@ -91,7 +91,7 @@ export const unlikeScream = (screamId) => (dispatch) => {
 // Submit a comment
 export const submitComment = (screamId, commentData) => (dispatch) => {
   axios
-    .post(`/user/${screamId}/comment`, commentData)
+    .post(`/users/${screamId}/comment`, commentData)
     .then((res) => {
       dispatch({
         type: SUBMIT_COMMENT,
@@ -108,7 +108,7 @@ export const submitComment = (screamId, commentData) => (dispatch) => {
 };
 export const deleteScream = (screamId) => (dispatch) => {
   axios
-    .delete(`/user/${screamId}`)
+    .delete(`/users/${screamId}`)
     .then(() => {
       dispatch({ type: DELETE_SCREAM, payload: screamId });
     })
@@ -118,7 +118,7 @@ export const deleteScream = (screamId) => (dispatch) => {
 export const getUserData = (userHandle) => (dispatch) => {
   dispatch({ type: LOADING_DATA });
   axios
-    .get(`/user/${userHandle}`)
+    .get(`/users/${userHandle}`)
     .then((res) => {
       dispatch({
         type: SET_SCREAMS,

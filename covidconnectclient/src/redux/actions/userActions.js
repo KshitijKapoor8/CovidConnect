@@ -5,6 +5,13 @@ import {
   LOADING_UI,
   CLEAR_ERRORS,
 } from "../types";
+
+
+import email from "../pages/login"; 
+import password from "../pages/login"; 
+
+
+
 import axios from "axios";
 
 export const loginUser = (userData, history) => (dispatch) => {
@@ -12,12 +19,13 @@ export const loginUser = (userData, history) => (dispatch) => {
   axios
     .post("http://localhost:5001/covidconnect-8067e/nam5(us-central)/api/Login", userData)
     .then((res) => {
-      const FBIdToken = `Bearer ${res.data.token}`;
-      localStorage.setItem("FBIdToken", FBIdToken);
-      axios.defaults.headers.common["Authorization"] = FBIdToken;
-      dispatch(getUserData());
-      dispatch({ type: CLEAR_ERRORS });
-      history.push('/');
+      //const FBIdToken = `Bearer ${res.data.token}`;
+      //localStorage.setItem("FBIdToken", FBIdToken);
+      //axios.defaults.headers.common["Authorization"] = FBIdToken;
+      //setAuthorizationHeader(res.data.token);
+      //dispatch(getUserData());
+      //dispatch({ type: CLEAR_ERRORS });
+      history.push('http://localhost:3000/');
     })
     .catch((err) => {
       dispatch({
@@ -26,14 +34,14 @@ export const loginUser = (userData, history) => (dispatch) => {
       });
     });
 };
-export const getUserData = () => (dispatch) => {
-  axios
-    .get("/users")
-      .then((res) => {
-      dispatch({
-        type: SET_USER,
-        payload: res.data,
-      });
-    })
-    .catch((err) => console.log(err));
+export const getUserData = ( {
+  "email": email,
+  "password": password
+  
+});
+
+const setAuthorizationHeader = (token) => {
+  const FBIdToken = `Bearer ${token}`;
+  localStorage.setItem('FBIdToken', FBIdToken);
+  axios.defaults.headers.common['Authorization'] = FBIdToken;
 };
