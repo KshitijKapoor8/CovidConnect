@@ -7,7 +7,9 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-import red from "@material-ui/core/colors/red";
+import {connect} from 'react-redux';
+import {loginUser} from '.../redux/actions/userActions';
+
 
 const styles = {
   form: {
@@ -30,43 +32,26 @@ class login extends Component {
     this.state = {
       email: "",
       password: "",
-      loading: false,
       errors: {},
     };
   }
   submit = (event) => {
     event.preventDefault();
-    this.setState({
-      loading: true,
-    });
     const userData = {
       email: this.state.email,
       password: this.state.password,
     };
-    axios
-      .prost("/login")
-      .then((res) => {
-        console.log(res.data);
-        this.setState({
-          loading: false,
-        });
-        this.props.history.push("/");
-      })
-      .catch((err) => {
-        this.setState({
-          error: err.respose.data,
-          loading: false,
-        });
-      });
-  };
+    this.props.loginUser(userData,this.props.history);
+    
+  }
   change = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
-  };
+  }
 
   render() {
-    const { classes } = this.props;
+    const { classes, UI: {loading}} = this.props;
     const { errors, loading } = this.state;
     return (
       <Grid container className={classes.form}>
@@ -76,27 +61,32 @@ class login extends Component {
             <TextField
               id="filled-secondary"
               name="email"
-              type="email"
+              type="text"
               label="Email"
               variant="filled"
               color="secondary"
               className={classes.TextFieldEmail}
+              helperText={errors.email}
+              error={errors.email ? true : false}
               value={this.state.email}
-              onChanges={this.change}
+              onChange={this.change}
               fullWidth
             />
             <TextField
               id="filled-secondary"
               name="password"
-              type="password"
+              type="text"
               label="Password"
               variant="filled"
               color="secondary"
               className={classes.TextFieldPass}
-              value={this.state.email}
-              onChanges={this.change}
+              helperText={errors.password}
+              error={errors.password ? true : false}
+              value={this.state.password}
+              onChange={this.change}
               fullWidth
             />
+            
             <Button
               id="Login"
               type="submit"
@@ -116,8 +106,19 @@ class login extends Component {
 
 login.propTypes = {
   classes: PropTypes.object.isRequired,
+  loginUser: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
+  UI: PropTypes.object.isRequired
 };
 
-//<TextField id="email" name = "email" type = "email" label = "Email" color="secondary" className={classes.TextFieldEmail} value={this.state.email} onChanges={this.change} fullWidth/>
 
-export default withStyles(styles)(login);
+const mapStateToProps = (state) => ({
+    user: state.user,
+    UI: state.UI
+})
+
+const mapActionsToProps = (
+    loginUser
+)
+
+export default connect(mapStatesToProps,mapActionsToProps)(withStyles(styles)(login));
