@@ -55,7 +55,7 @@ class login extends Component {
     const { errors } = this.state;
     return (
       <Grid container className={classes.form}>
-        <Grid item sm />s
+        <Grid item sm />
         <Grid item sm>
           <form noValidate onSubmit={this.submit}>
             <TextField
