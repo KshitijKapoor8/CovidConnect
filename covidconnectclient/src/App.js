@@ -32,6 +32,12 @@ const theme = createMuiTheme({
     }
   },
 
+  typography: {
+    useNextVariance: true 
+  }
+
+  
+
 })
  
 function App() {
