@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
-import AuthRoute from './util/AuthRoute';
+import AuthRoute from './utils/AuthRoute';
 import jwtDecode from 'jwt-decode';
 import {Provider} from 'react-redux';
 import store from './redux/store';
@@ -35,18 +35,19 @@ const theme = createMuiTheme({
     },
   },
 });
+let authenticated
 const token = localStorage.FBIdToken;
 if(token){
   const decodedToken = jwtDecode(token)
-  if(decodedToken.exp * 1000 < DataCue.now()){
+  if(decodedToken.exp * 1000 < Date.now()){
     window.location.href = '/login'
-    autheniticated = false;
+    authenticated = false;
 
 
   }
   else
   {
-    autheniticated = true;
+    authenticated = true;
   }
 
 }
@@ -65,8 +66,8 @@ function App() {
               <Route exact path="/" component={home} />
               <Route exact path="/connect" component={connect} />
               <Route exact path="/learn" component={learn} />
-              <AuthRoute exact path="/login" component={login} autheniticated={autheniticated}/>
-              <AuthRoute exact path="/signup" component={signup} autheniticated={autheniticated} />
+              <AuthRoute exact path="/login" component={login} authenticated={authenticated}/>
+              <AuthRoute exact path="/signup" component={signup} authenticated={authenticated} />
             </Switch>
           }
         </Router>

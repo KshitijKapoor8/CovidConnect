@@ -18,7 +18,7 @@ class connect extends Component {
     }
     render() {
         let recentPostsMarkup = this.state.posts ? (
-        this.state.posts.map(make => <p>{posts.body}</p>)
+        this.state.posts.map(make => <p>{make.body}</p>)
         ) : <p>Loading...</p>
         return (
             <Grid className='postGrid' container spacing={16} >

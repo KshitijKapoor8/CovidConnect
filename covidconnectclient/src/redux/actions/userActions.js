@@ -1,8 +1,7 @@
-import { SET_USER, SET_ERRORS, CLER_LOADING, LOADING_UI} from '../types';
+import { SET_USER, SET_ERRORS, CLEAR_LOADING, LOADING_UI,CLEAR_ERRORS} from '../types';
+import axios from 'axios';
 
 export const loginUser = (userData,history) => (dispatch) => {
-    //login code
-    //TO DO
     dispatch({type: LOADING_UI});
     axios
       .post("/login", userData)

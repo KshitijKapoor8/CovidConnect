@@ -8,7 +8,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 import {connect} from 'react-redux';
-import {loginUser} from '.../redux/actions/userActions';
+import {loginUser} from '../redux/actions/userActions';
 
 
 const styles = {
@@ -52,7 +52,7 @@ class login extends Component {
 
   render() {
     const { classes, UI: {loading}} = this.props;
-    const { errors, loading } = this.state;
+    const { errors } = this.state;
     return (
       <Grid container className={classes.form}>
         <Grid item sm />s
@@ -112,7 +112,7 @@ login.propTypes = {
 };
 
 
-const mapStateToProps = (state) => ({
+const mapStatesToProps = (state) => ({
     user: state.user,
     UI: state.UI
 })
