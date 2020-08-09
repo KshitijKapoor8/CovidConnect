@@ -13,7 +13,7 @@ const styles = {
     }
 }
 
-class Screams extends Component {
+class posts extends Component {
     render() {
             const { classes } = this.props
         return (
