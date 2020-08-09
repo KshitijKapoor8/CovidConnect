@@ -48,17 +48,10 @@ if(token){
   {
     autheniticated = true;
   }
-
 }
 
 
-  typography: {
-    useNextVariance: true 
-  }
 
-  
-
-})
  
 function App() {
   return (
