@@ -3,9 +3,9 @@ import thunk from "redux-thunk";
 
 import userReducer from "./reducers/userReducer";
 import dataReducer from "./reducers/dataReducers";
-import uiReducer from "./reducers/userReducer";
+import uiReducer from "./reducers/uiReducer";
 
-const initialState  = {};
+const initialState = {};
 
 const middleware = [thunk];
 
