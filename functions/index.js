@@ -22,24 +22,28 @@ admin.initializeApp();
 const db = admin.firestore();
 
 app.get('/posts', (req, res) => {
-    db
-      .collection("posts")
-        .orderBy('date', 'desc')
-        .get()
-            .then((data) => {
-                let posts = [];
-                data.forEach((doc) => {
-                    posts.push({
-                        postId: doc.id,
-                        body: doc.data().body,
-                        userHandle: doc.data().userHandle,
-                        date: doc.data().date
-                    });
-                });
-                return res.json(posts)
-            })
-        .catch(err => console.error(err));
+    db.collection('posts')
+    .orderBy('date', 'desc')
+    .get()
+    .then((data) => {
+      let posts = [];
+      data.forEach((doc) => {
+        posts.push({
+          postId: doc.id,
+          body: doc.data().body,
+          username: doc.data().username,
+          date: doc.data().date,
+          number: doc.data().number
+        });
+      });
+      return res.json(posts);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json({ error: err.code });
+    });
 });
+
 
 // const FBAuth = (req, res, next) => {
 //     let idToken;
@@ -73,7 +77,7 @@ app.post('/make', (req, res) => {
     const newPost = {
         body: req.body.body,
         date: new Date().toISOString(),
-        userHandle: req.user.username
+        username: req.user.username
     };
 
 
@@ -107,7 +111,8 @@ app.post('/signup', (req, res) => {
         email: req.body.email,
         password: req.body.password,
         confirmPassword: req.body.confirmPassword,
-        username: req.body.username
+        username: req.body.username,
+        number: req.body.number
     };
 
     let errors = {};
