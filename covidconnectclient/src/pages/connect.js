@@ -3,14 +3,27 @@ import Grid from '@material-ui/core/Grid'
 import axios from 'axios';
 
 class connect extends Component {
+    state = {
+        posts: null
+    }
     componentDidMount(){
-        axios.get('/')
+        axios.get('/posts')
+            .then(res => {
+                console.log(res.data)
+                this.setState({
+                    posts: res.data
+                })
+            })
+            .catch(err => console.log(err));
     }
     render() {
+        let recentPostsMarkup = this.state.posts ? (
+        this.state.posts.map(make => <p>{posts.body}</p>)
+        ) : <p>Loading...</p>
         return (
             <Grid className='postGrid' container spacing={16} >
                 <Grid item sm={8} xs={12}>
-                    <p>Content....</p>
+                    {recentPostsMarkup}
                 </Grid>
                 <Grid item sm={4} xs={12}>
                     <p>Profile....</p>
