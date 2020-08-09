@@ -11,7 +11,7 @@ import home from './pages/home';
 import connect from './pages/connect';
 import learn from './pages/learn';
 import login from './pages/login';
-import signup from './pages/signup';
+import signup from './pages/signup.js';
 
 const theme = createMuiTheme({
   palette: { 
