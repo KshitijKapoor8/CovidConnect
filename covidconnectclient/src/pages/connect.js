@@ -30,7 +30,26 @@ const styles = {
 
 
 
+
+
+
 class connect extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      buttonText: "Connect"
+    }
+  }
+
+
+
+  handleClick = () => {
+    let buttonText = this.state.buttonText == "555-555-5555" ? "555-555-5555" : "555-555-5555"
+    this.setState({buttonText: buttonText})
+  }
+
+
+
   render() {
     const { classes } = this.props;
     return (
@@ -48,9 +67,9 @@ class connect extends Component {
               variant="contained"
               color="primary"
               className={classes.button}
-             // onClick={()=> setButtonText("555-555-5555")}
+              onClick={this.handleClick}
              >
-              Connect
+              {this.state.buttonText}
             </Button>
         </CardContent>
       </Card>
