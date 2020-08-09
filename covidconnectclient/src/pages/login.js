@@ -97,7 +97,6 @@ class login extends Component {
               type="submit"
               variant="contained"
               color="primary"
-              className={classes.button} target ="_blank" href="http://localhost:3000/"
             >Login</Button>
           </form>
         </Grid>
