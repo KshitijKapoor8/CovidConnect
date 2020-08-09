@@ -44,7 +44,7 @@ app.get('/posts', (req, res) => {
     });
 });
 
-
+/*
 const FBAuth = (req, res, next) => {
     let idToken;
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
@@ -93,6 +93,8 @@ app.post('/make', FBAuth, (req, res) => {
             console.error(err)
         })
 });
+
+*/
 
 const isEmpty = (string) => {
     if (string === '') return true;
