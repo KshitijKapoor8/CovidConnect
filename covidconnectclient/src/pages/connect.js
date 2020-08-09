@@ -27,7 +27,14 @@ const styles = {
     margin: "-50px auto auto 1100px",
   }
 };
-
+  axios.get('http://localhost:5000/covidconnect-8067e/nam5(us-central)/api')
+    .then((res) =>
+    {
+      
+    })
+    .catch(err =>{
+      console.log(err);
+    })
 
 
 class connect extends Component {
