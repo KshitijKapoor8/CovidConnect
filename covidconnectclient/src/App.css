@@ -1,43 +1,42 @@
-*{
-  font-family: -apple-system, BlinkMacSystemFont, 'Microsoft PhagsPa', 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft PhagsPa",
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-body{
+body {
   background-color: #274450;
 }
 
-.container{
+.container {
   margin: 80px auto 0 auto;
   max-width: 1200px;
 }
 
-.titleName{
+.titleName {
   flex-grow: 1;
-  font-weight:bold;
+  font-weight: bold;
   font-size: 48px;
 }
 
-.postGrid{
+.postGrid {
   padding-top: 4rem;
 }
-h1.homeHeaders{
+h1.homeHeaders {
   text-shadow: 8px 8px black;
   padding-top: 6rem;
   color: white;
   text-align: center;
   font-size: 80px;
 }
-h2.homeHeaders{
+h2.homeHeaders {
   text-shadow: 5px 5px black;
   padding-top: 1rem;
   color: white;
   text-align: center;
   font-size: 56px;
 }
-h3.homeHeaders{
+h3.homeHeaders {
   flex-grow: 1;
   text-align: center;
   padding-top: 4rem;
@@ -45,14 +44,14 @@ h3.homeHeaders{
   text-align: center;
   font-size: 36px;
 }
-.button{
+.button {
   background-color: transparent;
   text-shadow: 5px 5px black;
   color: white;
   margin: auto;
   font-size: 56px;
 }
-h4.homeHeaders{
+h4.homeHeaders {
   text-shadow: 5px 5px black;
   padding-top: 5rem;
   color: white;
@@ -60,10 +59,10 @@ h4.homeHeaders{
   font-size: 36px;
 }
 
-.nav-container{
+.nav-container {
   display: flex;
 }
 
-.menuButtons{
+.menuButtons {
   font-size: 48px;
 }

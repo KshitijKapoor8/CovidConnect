@@ -57,7 +57,7 @@ class login extends Component {
       <Grid container className={classes.form}>
         <Grid item sm />s
         <Grid item sm>
-          <form noValidate submit={this.submit}>
+          <form noValidate onSubmit={this.submit}>
             <TextField
               id="filled-secondary"
               name="email"
@@ -115,10 +115,10 @@ login.propTypes = {
 const mapStatesToProps = (state) => ({
     user: state.user,
     UI: state.UI
-})
+});
 
-const mapActionsToProps = (
+const mapActionsToProps = {
     loginUser
-)
+};
 
 export default connect(mapStatesToProps,mapActionsToProps)(withStyles(styles)(login));

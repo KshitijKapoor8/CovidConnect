@@ -21,6 +21,12 @@ const styles = {
   button: {
     color: "primary",
   },
+  TextFieldCPass: {
+    margin: "-50px auto -50px auto",
+  },
+  TextFieldCEmail: {
+    margin: "30px auto 30px auto",
+  },
 };
 
 class signup extends Component {
@@ -112,7 +118,7 @@ class signup extends Component {
               label="Confirm Password"
               variant="filled"
               color="secondary"
-              className={classes.TextFieldPass}
+              className={classes.TextFieldCPass}
               helperText={errors.confirmPassword}
               error={errors.confirmPassword ? true : false}
               value={this.state.confirmPassword}
@@ -126,7 +132,7 @@ class signup extends Component {
               label="Username"
               variant="filled"
               color="secondary"
-              className={classes.TextFieldEmail}
+              className={classes.TextFieldCEmail}
               helperText={errors.confirmEmail}
               error={errors.confirmEmail ? true : false}
               value={this.state.confirmEmail}

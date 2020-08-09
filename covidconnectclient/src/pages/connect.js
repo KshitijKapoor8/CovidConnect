@@ -1,6 +1,23 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
 import axios from 'axios';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
+import { FormHelperText } from '@material-ui/core';
+
+const styles = {
+    card: {
+        display: 'flex'
+    }
+
+}
+
+
+
+
 
 class connect extends Component {
     state = {

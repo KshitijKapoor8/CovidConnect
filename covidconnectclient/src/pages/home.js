@@ -11,7 +11,7 @@ class home extends Component {
                 <h3 className='homeHeaders' style={{float: 'right'}, {width: '33%'}}>Get Necessary Help</h3> 
                 </div>
                 <h4 className='homeHeaders'>We Are In This Together</h4>
-                <a class="button" href="pages/signup">Join The Community</a>
+                <a className="button" href="/signup">Join The Community</a>
                 
 
             </div>

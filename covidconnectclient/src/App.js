@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
-import AuthRoute from './utils/AuthRoute';
-import jwtDecode from 'jwt-decode';
-import {Provider} from 'react-redux';
-import store from './redux/store';
+import AuthRoute from "./utils/AuthRoute";
+import jwtDecode from "jwt-decode";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 //Components
 import Navbar from "./components/Navbar";
 //Pages
@@ -38,43 +38,46 @@ const theme = createMuiTheme({
 
 let authenticated;
 const token = localStorage.FBIdToken;
-if(token){
-  const decodedToken = jwtDecode(token)
-  if(decodedToken.exp * 1000 < Date.now()){
-    window.location.href = '/login'
-    authenticated = false
-
-
-  }
-  else
-  {
+if (token) {
+  const decodedToken = jwtDecode(token);
+  if (decodedToken.exp * 1000 < Date.now()) {
+    window.location.href = "/login";
+    authenticated = false;
+  } else {
     authenticated = true;
   }
 }
 
-
-
- 
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
-    <Provider store={store}>
-      <div className="App">
-        <Router>
-          <Navbar />
-          .container
-          {
-            <Switch>
-              <Route exact path="/" component={home} />
-              <Route exact path="/connect" component={connect} />
-              <Route exact path="/learn" component={learn} />
-              <AuthRoute exact path="/login" component={login} authenticated={authenticated}/>
-              <AuthRoute exact path="/signup" component={signup} authenticated={authenticated} />
-            </Switch>
-          }
-        </Router>
-      </div>
-    </Provider>
+      <Provider store={store}>
+        <div className="App">
+          <Router>
+            <Navbar />
+            .container
+            {
+              <Switch>
+                <Route exact path="/" component={home} />
+                <Route exact path="/connect" component={connect} />
+                <Route exact path="/learn" component={learn} />
+                <AuthRoute
+                  exact
+                  path="/login"
+                  component={login}
+                  authenticated={authenticated}
+                />
+                <AuthRoute
+                  exact
+                  path="/signup"
+                  component={signup}
+                  authenticated={authenticated}
+                />
+              </Switch>
+            }
+          </Router>
+        </div>
+      </Provider>
     </MuiThemeProvider>
   );
 }
