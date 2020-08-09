@@ -17,6 +17,7 @@ export const loginUser = (userData, history) => (dispatch) => {
       axios.defaults.headers.common["Authorization"] = FBIdToken;
       dispatch(getUserData());
       dispatch({ type: CLEAR_ERRORS });
+      console.log(userData);
       history.push('/');
     })
     .catch((err) => {
